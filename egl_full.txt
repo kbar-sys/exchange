@@ -1,0 +1,10 @@
+sudo apt update
+sudo apt install build-essential libraspberrypi-dev
+
+g++ -std=c++11 -O2 \
+  -I/opt/vc/include \
+  -I/opt/vc/include/interface/vcos/pthreads \
+  -I/opt/vc/include/interface/vmcs_host/linux \
+  pi_zero_egl_fullscreen.cpp -o pi_zero_egl_fullscreen \
+  -L/opt/vc/lib \
+  -lGLESv2 -lEGL -lbcm_host -lvcos -lvchiq_arm -lpthread -lrt -lm
